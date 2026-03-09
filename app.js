@@ -52,10 +52,6 @@ let TotalExpenses = 0;
 
             TotalExpenses += itemamount;
             items.unshift(itemobject);
-            let convertItemToStr=JSON.stringify(items)
-            localStorage.setItem("items",convertItemToStr)
-            console.log(items)
-
             calculateProfit();
         }
 
@@ -82,6 +78,10 @@ let TotalExpenses = 0;
                 </div>
             `;
             }
+            let convertItemToStr=JSON.stringify(items)
+            localStorage.setItem("items",convertItemToStr)
+            console.log(items)
+
 
             document.querySelector(".result").innerHTML = listitem;
         }
