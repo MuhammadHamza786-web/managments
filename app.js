@@ -84,7 +84,7 @@ let TotalExpenses = 0;
       
             localStorage.setItem("items",convertItemToStr)
             
-            
+            localStorage.clear()
         }
         printdata()
         // console.log(items)
