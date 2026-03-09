@@ -78,11 +78,11 @@ let TotalExpenses = 0;
                 </div>
             `;
             }
+            document.querySelector(".result").innerHTML = listitem;
             let convertItemToStr=JSON.stringify(item)
             localStorage.setItem("user",convertItemToStr)
             
             
-            document.querySelector(".result").innerHTML = listitem;
         }
         console.log(items)
 
