@@ -1,9 +1,9 @@
-let localStrVal = localStorage.getItem("items")
+let localStrVal = localStorage.getItem("user")
 
-// let itemList = []
+ let item = []
 
 if(localStrVal){
-    items = JSON.parse(localStrVal)
+    item = JSON.parse(localStrVal)
 }
 
 
@@ -78,13 +78,13 @@ let TotalExpenses = 0;
                 </div>
             `;
             }
-            let convertItemToStr=JSON.stringify(items)
-            localStorage.setItem("items",convertItemToStr)
-            console.log(items)
-
-
+            let convertItemToStr=JSON.stringify(item)
+            localStorage.setItem("user",convertItemToStr)
+            
+            
             document.querySelector(".result").innerHTML = listitem;
         }
+        console.log(items)
 
         function clearInputs() {
             document.getElementById("Expense").value = "";
