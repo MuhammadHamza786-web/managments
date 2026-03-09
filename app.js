@@ -1,3 +1,14 @@
+let localStrVal = localStorage.getItem("items")
+
+// let itemList = []
+
+if(localStrVal){
+    items = JSON.parse(localStrVal)
+}
+
+
+
+
 let TotalExpenses = 0;
         let TotalIncome = 0;
         let TotalProfit = 0;
@@ -36,10 +47,15 @@ let TotalExpenses = 0;
                 name: itemdetails,
                 itemamount: itemamount,
                 type: "loss"
+                
             };
 
             TotalExpenses += itemamount;
             items.unshift(itemobject);
+            let convertItemToStr=JSON.stringify(items)
+            localStorage.setItem("items",convertItemToStr)
+            console.log(items)
+
             calculateProfit();
         }
 
