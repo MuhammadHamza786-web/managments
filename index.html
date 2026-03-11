@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profit And Loss Calculation</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="card-container">
-    <div class="card-red">
-        <h4>Total Expense</h4>
-        <h1 id="expen">0 PKR</h1>
+        <div class="card-red">
+            <h4>Total Expense</h4>
+            <h1 id="expen">0 PKR</h1>
+        </div>
+        <div class="card-green">
+            <h4>Total Incomee</h4>
+            <h1 id="Inco">0 PKR</h1>
+        </div>
+        <div class="card">
+            <h4>Total Profit</h4>
+            <h1 id="Pro">0 PKR</h1>
+        </div>
     </div>
-    <div class="card-green">
-        <h4>Total Incomee</h4>
-        <h1 id="Inco">0 PKR</h1>
-    </div>
-    <div class="card">
-        <h4>Total Profit</h4>
-        <h1 id="Pro">0 PKR</h1>
-    </div>
-</div>
-<label for="Expense">
-    Details <input type="text" id="Expense">
-</label>
-<br>
-<label for="Income">
-    Amount <input type="text" id="Income">
-</label>
-<br>
-<button onclick="sellItem()" id="btn2">Sell</button>
-<button onclick="buyItem()" id="btn">Buy</button>
-<div class="result"> </div>
+    <label for="Expense">
+        Details <input type="text" id="Expense">
+    </label>
+    <br>
+    <label for="Income">
+        Amount <input type="text" id="Income">
+    </label>
+    <br>
+    <button onclick="sellItem()" id="btn2">Sell</button>
+    <button onclick="buyItem()" id="btn">Buy</button>
+    <div class="result"> </div>
 
 
 
@@ -40,4 +42,5 @@
 
 </body>
 <script src="./app.js"></script>
+
 </html>

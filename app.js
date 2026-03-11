@@ -1,8 +1,8 @@
 let localStrVal = localStorage.getItem("items")
 
- let items = []
+let items = []
 
-if(localStrVal){
+if (localStrVal) {
     items = JSON.parse(localStrVal)
 }
 
@@ -10,89 +10,91 @@ if(localStrVal){
 
 
 let TotalExpenses = 0;
-        let TotalIncome = 0;
-        let TotalProfit = 0;
-    
+let TotalIncome = 0;
+let TotalProfit = 0;
 
-        function sellItem() {
-            let itemdetails = document.getElementById("Expense").value;
-            let itemamount = Number(document.getElementById("Income").value);
 
-            if (itemdetails === "" || itemamount <= 0) {
-                alert("Sell ke liye valid details aur amount dalo");
-                return;
-            }
+function sellItem() {
+    let itemdetails = document.getElementById("Expense").value;
+    let itemamount = Number(document.getElementById("Income").value);
 
-            let itemobject = {
-                name: itemdetails,
-                itemamount: itemamount,
-                type: "profit"
-            };
+    if (itemdetails === "" || itemamount <= 0) {
+        alert("Sell ke liye valid details aur amount dalo");
+        return;
+    }
 
-            TotalIncome += itemamount;
-            items.push(itemobject);
-            calculateProfit();
-        }
+    let itemobject = {
+        name: itemdetails,
+        itemamount: itemamount,
+        type: "profit"
+    };
 
-        function buyItem() {
-            let itemdetails = document.getElementById("Expense").value;
-            let itemamount = Number(document.getElementById("Income").value);
+    TotalIncome += itemamount;
+    items.push(itemobject);
+    calculateProfit();
+}
 
-            if (itemdetails === "" || itemamount <= 0) {
-                alert("Buy ke liye valid details aur amount dalo");
-                return;
-            }
+function buyItem() {
+    let itemdetails = document.getElementById("Expense").value;
+    let itemamount = Number(document.getElementById("Income").value);
 
-            let itemobject = {
-                name: itemdetails,
-                itemamount: itemamount,
-                type: "loss"
-                
-            };
+    if (itemdetails === "" || itemamount <= 0) {
+        alert("Buy ke liye valid details aur amount dalo");
+        return;
+    }
 
-            TotalExpenses += itemamount;
-            items.push(itemobject);
-            calculateProfit();
-        }
+    let itemobject = {
+        name: itemdetails,
+        itemamount: itemamount,
+        type: "loss"
+
+    };
+
+    TotalExpenses += itemamount;
+    items.push(itemobject);
+    calculateProfit();
+}
 // calculateProfit()
-        function calculateProfit() {
-            TotalProfit = TotalIncome - TotalExpenses;
-            printdata();
-            clearInputs();
-        }
+function calculateProfit() {
+    TotalProfit = TotalIncome - TotalExpenses;
+    printdata();
+    clearInputs();
+}
 
-        function printdata() {
-            document.getElementById("expen").innerText = TotalExpenses;
-            document.getElementById("Inco").innerText = TotalIncome;
-            document.getElementById("Pro").innerText = TotalProfit;
+function printdata() {
+    document.getElementById("expen").innerText = TotalExpenses;
+    document.getElementById("Inco").innerText = TotalIncome;
+    document.getElementById("Pro").innerText = TotalProfit;
 
-            let listitem = "";
+    let listitem = "";
 
-            for (let i = 0; i < items.length; i++) {
-                let Extraclass = items[i].type == "loss" ? "red" : "green";
+    for (let i = 0; i < items.length; i++) {
+        let Extraclass = items[i].type == "loss" ? "red" : "green";
 
-                listitem += `
+        listitem += `
                 <div class="item ${Extraclass}">
                     <h5>${items[i].name}</h5>
                     <h1>${items[i].itemamount}</h1>
                 </div>
             `;
-            }
-            document.querySelector(".result").innerHTML = listitem;
-      
-            let convertItemToStr=JSON.stringify(items)
-      
-            localStorage.setItem("items",convertItemToStr)
-            
-            localStorage.clear()
-        }
-        printdata()
-        // console.log(items)
+    }
+    document.querySelector(".result").innerHTML = listitem;
 
-        function clearInputs() {
-            document.getElementById("Expense").value = "";
-            document.getElementById("Income").value = "";
-        }
+    let convertItemToStr = JSON.stringify(items)
+
+    localStorage.setItem("items", convertItemToStr)
+
+
+}
+
+
+printdata()
+
+
+function clearInputs() {
+    document.getElementById("Expense").value = "";
+    document.getElementById("Income").value = "";
+}
 
 
 
