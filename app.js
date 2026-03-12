@@ -7,8 +7,6 @@ if (localStrVal) {
 }
 
 
-
-
 let TotalExpenses = 0;
 let TotalIncome = 0;
 let TotalProfit = 0;
@@ -59,6 +57,7 @@ function calculateProfit() {
     TotalProfit = TotalIncome - TotalExpenses;
     printdata();
     clearInputs();
+
 }
 
 function printdata() {
