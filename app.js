@@ -52,7 +52,9 @@ function buyItem() {
     items.push(itemobject);
     calculateProfit();
 }
-// calculateProfit()
+
+
+calculateProfit()
 function calculateProfit() {
     TotalProfit = TotalIncome - TotalExpenses;
     printdata();
@@ -61,9 +63,9 @@ function calculateProfit() {
 }
 
 function printdata() {
-    document.getElementById("expen").innerText = TotalExpenses;
-    document.getElementById("Inco").innerText = TotalIncome;
-    document.getElementById("Pro").innerText = TotalProfit;
+    document.getElementById("expen").innerText =TotalExpenses;
+    document.getElementById("Inco").innerText =TotalIncome;
+    document.getElementById("Pro").innerText =TotalProfit;
 
     let listitem = "";
 
@@ -88,7 +90,6 @@ function printdata() {
 
 
 printdata()
-
 
 function clearInputs() {
     document.getElementById("Expense").value = "";
