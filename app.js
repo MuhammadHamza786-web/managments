@@ -66,6 +66,7 @@ function printdata() {
     document.getElementById("expen").innerText =TotalExpenses;
     document.getElementById("Inco").innerText =TotalIncome;
     document.getElementById("Pro").innerText =TotalProfit;
+    
 
     let listitem = "";
 
