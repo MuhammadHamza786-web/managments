@@ -1,3 +1,4 @@
+
 let localStrVal = localStorage.getItem("items")
 
 let items = []
@@ -7,9 +8,9 @@ if (localStrVal) {
 }
 
 
-let TotalExpenses = 0;
-let TotalIncome = 0;
+
 let TotalProfit = 0;
+
 
 
 function sellItem() {
@@ -56,6 +57,17 @@ function buyItem() {
 
 calculateProfit()
 function calculateProfit() {
+    TotalIncome = 0;
+    TotalExpenses = 0;
+
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].type === "profit") {
+            TotalIncome += items[i].itemamount;
+        } else {
+            TotalExpenses += items[i].itemamount;
+        }
+    }
+
     TotalProfit = TotalIncome - TotalExpenses;
     printdata();
     clearInputs();
@@ -63,10 +75,10 @@ function calculateProfit() {
 }
 
 function printdata() {
-    document.getElementById("expen").innerText =TotalExpenses;
-    document.getElementById("Inco").innerText =TotalIncome;
-    document.getElementById("Pro").innerText =TotalProfit;
-    
+    document.getElementById("expen").innerText = TotalExpenses;
+    document.getElementById("Inco").innerText = TotalIncome;
+    document.getElementById("Pro").innerText = TotalProfit;
+
 
     let listitem = "";
 
@@ -96,6 +108,5 @@ function clearInputs() {
     document.getElementById("Expense").value = "";
     document.getElementById("Income").value = "";
 }
-
 
 
