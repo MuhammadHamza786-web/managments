@@ -110,3 +110,4 @@ function clearInputs() {
 }
 
 
+localStorage.clear()
